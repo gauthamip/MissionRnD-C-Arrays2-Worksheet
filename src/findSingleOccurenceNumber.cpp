@@ -12,7 +12,28 @@ ERROR CASES: Return -1 for invalid inputs.
 
 NOTES:
 */
+#include<stdio.h>
 
 int findSingleOccurenceNumber(int *A, int len) {
-	return -1;
+	if (A == NULL)
+		return -1;
+	int i, num, j, count = 0, flag = 0;
+	for (i = 0; i < len; i++)
+	{
+		num = A[i];
+		count = 0;
+		for (j = 0; j < len; j++)
+		{
+			if (A[j] == num)
+				count++;
+		}
+		if (count == 1)
+		{
+			flag = 1;
+			return A[i];
+		}
+	}
+	if (flag == 0)
+		return NULL;
+
 }

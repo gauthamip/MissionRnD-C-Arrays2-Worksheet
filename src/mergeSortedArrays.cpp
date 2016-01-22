@@ -26,7 +26,7 @@ struct transaction * mergeSortedArrays(struct transaction *A, int ALen, struct t
 	if (A == NULL || B == NULL)
 		return NULL;
 	int i = 0, j = 0, k = 0, temp;
-	struct transaction *result = (struct transaction*)malloc(sizeof(struct transaction));
+	struct transaction *result = (struct transaction*)malloc((ALen+BLen)*sizeof(struct transaction));
 	while (1)
 	{
 		temp = compare_dates(A[i].date, B[j].date);
